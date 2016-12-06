@@ -14,7 +14,3 @@ app.get('/poll', (req, res) => {
 
     res.send(cmd ? 't' : 'n');
 });
-
-app.get('/', (req, res) => {
-    res.send('Hej bitch');
-});
