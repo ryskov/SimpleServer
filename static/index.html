@@ -3,9 +3,17 @@
         <title>H4K Control Panel</title>
         <script>
             toggleSwitch = function() {
-                var client = new XMLHttpRequest();
-                client.open("PUT", "http://web.pi.webtrick.dk:1337/toggle", false);
-                client.send();
+                var xmlHttp = new XMLHttpRequest();
+
+                xmlHttp.onreadystatechange = function () {
+                    if (xmlHttp.readyState === 4) {
+                        console.log('PUT done, status', xmlHttp.status);
+                    }
+                }
+
+                xmlHttp.open("PUT", "http://web.pi.webtrick.dk:1337/toggle", true);
+
+                xmlHttp.send("");
             }
         </script>
     </head>
